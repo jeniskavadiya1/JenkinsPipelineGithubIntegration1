@@ -3,6 +3,9 @@ pipeline {
 
     stages {
         stage('Build') {
+            environment {
+                        currentBuild.displayName = = 'HowAreYouBuild'
+                    }
             steps {
                 echo 'Step 1 in Stage 1 Build: Jenkins Pipeline Github Integration'
                 echo "BUILD_NUMBER: ${env.BUILD_NUMBER}"
@@ -14,11 +17,5 @@ pipeline {
                 echo 'Step 1 in Stage 2 Deploy: Jenkins Pipeline Github Integration'
             }
         }
-        stage('PostRun') {
-                    script {
-                        currentBuild.displayName = 'HowAreYouBuild';
-                    }
-                }
-
     }
 }

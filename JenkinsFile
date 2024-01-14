@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Step 1 in Stage 1 Build: Jenkins Pipeline Github Integration'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Step 1 in Stage 2 Deploy: Jenkins Pipeline Github Integration'
+            }
+        }
+    }
+}

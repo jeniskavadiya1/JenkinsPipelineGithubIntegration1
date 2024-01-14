@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             environment {
-                        currentBuild.displayName = 'HowAreYouBuild'
+                        currentBuild.displayName = "HowAreYouBuild"
                     }
             steps {
                 echo 'Step 1 in Stage 1 Build: Jenkins Pipeline Github Integration'

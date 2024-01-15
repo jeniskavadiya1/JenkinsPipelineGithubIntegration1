@@ -15,7 +15,7 @@ pipeline {
 
                 script{
                     currentBuild.displayName = "Build ---" + "${env.BUILD_NUMBER}"
-                    cmd "mvn --version"
+                    cmd.exe "mvn --version"
                 }
             }
         }

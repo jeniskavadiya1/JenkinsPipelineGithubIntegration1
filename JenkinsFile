@@ -12,10 +12,10 @@ pipeline {
             steps {
                 echo 'Step 1 in Stage 1 Build: Jenkins Pipeline Github Integration'
                 echo "BUILD_NUMBER: ${env.BUILD_NUMBER}"
-                mvn --version
+
                 script{
                     currentBuild.displayName = "Build ---" + "${env.BUILD_NUMBER}"
-
+                    cmd "mvn --version"
                 }
             }
         }

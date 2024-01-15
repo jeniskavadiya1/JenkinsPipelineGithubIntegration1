@@ -3,13 +3,18 @@ pipeline {
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
     }
+
+   tools{
+        maven 'IntelliJ_Maven3'
+   }
     stages {
         stage('Build') {
             steps {
                 echo 'Step 1 in Stage 1 Build: Jenkins Pipeline Github Integration'
                 echo "BUILD_NUMBER: ${env.BUILD_NUMBER}"
                 script{
-                    currentBuild.displayName = "HowAreYouBuild" + "${env.BUILD_NUMBER}"
+                    currentBuild.displayName = "HowAreYouBuild---" + "${env.BUILD_NUMBER}"
+                    mvn --version
                 }
             }
         }

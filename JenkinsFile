@@ -3,7 +3,9 @@ pipeline {
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
     }
-
+ env{
+    MyUID = credentials('TestUNamePwd')
+ }
    tools{
         maven 'IntelliJ_Maven3'
    }
@@ -12,7 +14,9 @@ pipeline {
             steps {
                 echo 'Step 1 in Stage 1 Build: Jenkins Pipeline Github Integration'
                 echo "BUILD_NUMBER: ${env.BUILD_NUMBER}"
+                echo "Credential value ${MyUID}"
                 bat "mvn --version"
+
                 script{
                     currentBuild.displayName = "Build ---" + "${env.BUILD_NUMBER}"
 
